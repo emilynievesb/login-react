@@ -1,0 +1,36 @@
+use("login_react");
+db.createCollection("users", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["username", "password", "email", "fechaNacimiento"],
+      properties: {
+        username: {
+          bsonType: "string",
+          description: "Username del usuario",
+        },
+        password: {
+          bsonType: "string",
+          description: "password de un usuario",
+        },
+        email: {
+          bsonType: "string",
+          pattern:
+            "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$",
+          description: "email del usuario",
+        },
+        fechaNacimiento: {
+          bsonType: "date",
+          description: "Fecha de nacimiento del usuario",
+        },
+      },
+    },
+  },
+});
+
+db.users.insertOne({
+  username: "emilynievesb",
+  password: "emilynieves123",
+  email: "emily@mail.com",
+  fechaNacimiento: new Date("17-10-2003"),
+});
