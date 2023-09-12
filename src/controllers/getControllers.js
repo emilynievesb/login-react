@@ -1,13 +1,9 @@
-import { getUser } from "../services/getServices.js";
+import { getEmail, getUser } from "../services/getServices.js";
 
 const getUserController = async (req, res, next) => {
   try {
-    const { username, password, email, fechaNacimiento } = req.body;
-    const result = await getUser(username, password, email, fechaNacimiento);
-    // if (result.length === 0) {
-    //   res.status(200).json("El paciente no ha tenido citas finalizadas");
-    //   return;
-    // }
+    const { username } = req.body;
+    const result = await getUser(username);
     res.status(200).json(result);
   } catch (error) {
     res.status(500).json(error);
@@ -16,12 +12,8 @@ const getUserController = async (req, res, next) => {
 
 const getEmailController = async (req, res, next) => {
   try {
-    const { username, password, email, fechaNacimiento } = req.body;
-    const result = await getUser(username, password, email, fechaNacimiento);
-    // if (result.length === 0) {
-    //   res.status(200).json("El paciente no ha tenido citas finalizadas");
-    //   return;
-    // }
+    const { email } = req.body;
+    const result = await getEmail(email);
     res.status(200).json(result);
   } catch (error) {
     res.status(500).json(error);

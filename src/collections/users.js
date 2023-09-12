@@ -17,8 +17,9 @@ class Users {
   async searchUser() {
     try {
       const connection = await this.connect();
-      const resultado = await connection.findOne({ username: this.username });
-      console.log(resultado);
+      const resultado = await connection
+        .find({ username: this.username })
+        .toArray();
       return resultado;
     } catch (error) {
       throw error;
