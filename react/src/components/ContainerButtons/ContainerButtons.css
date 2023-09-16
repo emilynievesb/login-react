@@ -1,0 +1,28 @@
+.containerButtons {
+  display: flex;
+  width: 80%;
+  height: 15vh;
+}
+.buttonLogin,
+.buttonRegister {
+  float: right;
+  width: 50%;
+  text-align: center;
+  padding: 12px 12px;
+  margin: 16px 0 0;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #78788c;
+  background: 0;
+  color: #5a5a6e;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.buttonLogin:hover,
+.buttonRegister:hover {
+  background-color: #78788c;
+  color: #fff;
+}
+.active {
+  background-color: #78788c;
+  color: #fff;
+}

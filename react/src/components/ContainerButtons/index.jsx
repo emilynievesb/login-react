@@ -1,12 +1,11 @@
-import { LoginButton } from "../LoginButton";
-import { RegisterButton } from "../RegisterButton";
 import "./ContainerButtons.css";
+
 function ContainerButtons() {
   return (
     <>
       <div className="containerButtons">
-        <LoginButton></LoginButton>
-        <RegisterButton></RegisterButton>
+        <div className="buttonLogin active">Login</div>
+        <div className="buttonRegister">Register</div>
       </div>
     </>
   );
