@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { ContainerButtons } from "../components/ContainerButtons";
-import { FormContainer } from "../components/FormContainer";
+import { Formulary } from "../components/Formulary";
 
 function Login() {
+  const [activeForm, setActiveForm] = useState("login-form");
   return (
     <>
-      <ContainerButtons></ContainerButtons>
-      <FormContainer></FormContainer>
+      <div className="container">
+        <ContainerButtons setActiveForm={setActiveForm}></ContainerButtons>
+        <Formulary activeForm={activeForm}></Formulary>
+      </div>
     </>
   );
 }
