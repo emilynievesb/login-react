@@ -5,7 +5,7 @@ class Users {
   password;
   email;
   fechaNacimiento;
-  constructor() {}
+  constructor() { }
   async connect() {
     try {
       const result = await connection("users");
@@ -28,7 +28,7 @@ class Users {
   async searchEmail() {
     try {
       const connection = await this.connect();
-      const resultado = await connection.findOne({ email: this.email });
+      const resultado = await connection.find({ email: this.email }).toArray();
       return resultado;
     } catch (error) {
       throw error;

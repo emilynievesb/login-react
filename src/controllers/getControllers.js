@@ -2,7 +2,7 @@ import { getEmail, getUser } from "../services/getServices.js";
 
 const getUserController = async (req, res, next) => {
   try {
-    const { username } = req.body;
+    const { username } = req.query;
     const result = await getUser(username);
     res.status(200).json(result);
   } catch (error) {
@@ -12,7 +12,7 @@ const getUserController = async (req, res, next) => {
 
 const getEmailController = async (req, res, next) => {
   try {
-    const { email } = req.body;
+    const { email } = req.query;
     const result = await getEmail(email);
     res.status(200).json(result);
   } catch (error) {
