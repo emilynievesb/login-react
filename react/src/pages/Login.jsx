@@ -1,13 +1,15 @@
-import { useState } from "react";
 import { ContainerButtons } from "../components/ContainerButtons";
 import { Formulary } from "../components/Formulary";
-
+import { useLogin } from "../shared/hooks/login";
 function Login() {
-  const [activeForm, setActiveForm] = useState("login-form");
+  const { activeForm, handdleActiveForm } = useLogin();
   return (
     <>
       <div className="container">
-        <ContainerButtons setActiveForm={setActiveForm}></ContainerButtons>
+        <ContainerButtons
+          handdleActiveForm={handdleActiveForm}
+          activeForm={activeForm}
+        ></ContainerButtons>
         <Formulary activeForm={activeForm}></Formulary>
       </div>
     </>

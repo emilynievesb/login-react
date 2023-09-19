@@ -1,27 +1,22 @@
-import { useState } from "react";
 import "./ContainerButtons.css";
 
-function ContainerButtons({ setActiveForm }) {
-  const [activeButton, setActiveButton] = useState("login");
-
-  const handleButtonClick = (button) => {
-    setActiveButton(button);
-    setActiveForm(button === "login" ? "login-form" : "register-form");
-  };
+function ContainerButtons({ handdleActiveForm, activeForm }) {
   return (
     <>
       <div className="containerButtons">
         <div
-          className={`buttonLogin ${activeButton === "login" ? "active" : ""}`}
-          onClick={() => handleButtonClick("login")}
+          className={`buttonLogin ${
+            activeForm === "login-form" ? "active" : ""
+          }`}
+          onClick={() => handdleActiveForm("login-form")}
         >
           Login
         </div>
         <div
           className={`buttonRegister ${
-            activeButton === "register" ? "active" : ""
+            activeForm === "register-form" ? "active" : ""
           }`}
-          onClick={() => handleButtonClick("register")}
+          onClick={() => handdleActiveForm("register-form")}
         >
           Register
         </div>
