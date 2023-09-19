@@ -4,6 +4,7 @@ import {
   emailFetch,
   usernameFetch,
 } from "../../shared/services/formulary";
+import { useNavigate } from "react-router-dom";
 const useFormulary = () => {
   const [activeForm, setActiveForm] = useState("login-form");
   const [formData, setFormData] = useState({
@@ -24,6 +25,8 @@ const useFormulary = () => {
     });
   };
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (activeForm === "login-form") {
@@ -33,7 +36,13 @@ const useFormulary = () => {
         data[0].username === formData.username &&
         data[0].password === formData.password
       ) {
-        alert("Hola mundo");
+        navigate("/dashboard");
+        setFormData({
+          username: "",
+          email: "",
+          password: "",
+          fechaNacimiento: "",
+        });
       } else {
         alert("Nombre de usuario o contraseña incorrectos");
       }
