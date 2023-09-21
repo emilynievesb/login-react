@@ -77,6 +77,13 @@ La aplicación debería estar disponible en http://localhost:5173/
 
 - Puedes usar el login o el register según lo que necesites.
 
+## Usuario default:
+
+```json
+username: emilynievesb
+password: emilynieves123
+```
+
 ## Rutas de la API
 
 El backend de este proyecto proporciona varias rutas de API para realizar diversas operaciones relacionadas con la autenticación y la gestión de usuarios.
