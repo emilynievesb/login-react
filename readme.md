@@ -77,7 +77,17 @@ La aplicación debería estar disponible en http://localhost:5173/
 
 - Puedes usar el login o el register según lo que necesites.
 
-## Usuario default:
+## Credenciales
+
+- Crea un archivo .env dentro de la carpeta src que contenga:
+
+```
+MY_CONFIG={"user":"admin","password":"admin123","database": "login_react"}
+MY_SERVER={"hostname":"192.168.128.23", "port":5117}
+JWT_PRIVATE_KEY="claves3cret4"
+```
+
+## Usuario default
 
 ```json
 username: emilynievesb
